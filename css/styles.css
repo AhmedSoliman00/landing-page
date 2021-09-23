@@ -39,6 +39,7 @@ body {
   text-decoration: none;
   color: aliceblue;
   transition: all 0.4s;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #btn:hover {
@@ -232,10 +233,10 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* Section Active Styles */
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
 section.your-active-class {
-  background: rgb(0, 0, 0);
+  background: rgb(85, 73, 73);
   background: linear-gradient(
     0deg,
-    rgba(0, 0, 0, 0.1) 0%,
+    rgba(115, 188, 248, 0.63) 0%,
     rgba(0, 0, 0, 0) 100%
   );
 }
@@ -341,12 +342,13 @@ section {
   font-weight: bold;
   text-decoration: none;
   color: #000;
+  transition: all 0.3s;
 }
 
 .navbar__menu .menu__link:hover {
-  background: #333;
+  background: rgb(75, 185, 112) !important;
   color: #fff;
-  transition: ease 0.3s all;
+  transition:  ease-in 0.2s all;
 }
 
 /* Header Styles */
@@ -465,7 +467,7 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* Section Active Styles */
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
 section.your-active-class {
-  background: rgb(0, 0, 0);
+  background: rgba(96, 144, 207, 0.193) !important;
   background: linear-gradient(
     0deg,
     rgba(0, 0, 0, 0.1) 0%,
