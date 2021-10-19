@@ -20,6 +20,7 @@
 let counter = 0;
 let sections = document.querySelectorAll("section");
 const navBar = document.querySelector("#navbar__list");
+const header = document.querySelector(".page__header");
 /**
  * End Global Variables
  * Start Helper Functions
@@ -49,29 +50,40 @@ const createNav = () => {
     navBar.insertAdjacentHTML("beforeend", listItem);
   });
 };
-
 //end creeatNav
 
-/**
- * End Helper Functions
- * Begin Main Functions
- *
- */
+//start window scroll
+window.onscroll = function () {
+  document.querySelectorAll("section").forEach(active);
+  let activeLink = navBar.querySelector(`[data-nav=${active.id}]`);
 
-// build the nav
+  if (
+    active.getBoundingClientRect().top >= -350 &&
+    active.getBoundingClientRect().top <= 150
+  ) {
+    active.classList.add("your-active-class");
+    activeLink.classList.add("active-link");
+  } else {
+    active.classList.remove("your-active-class");
+    activeLink.classList.remove("active-link");
+  }
+};
 
-// Add class 'active' to section when near top of viewport
-
-// Scroll to anchor ID using scrollTO event
-
-/**
- * End Main Functions
- * Begin Events
- *
- */
-
-// Build menu
-
-// Scroll to section on link click
-
-// Set sections as active
+//end window scroll
+//start
+navBar.addEventListener("click", (event) => {
+  if (event.target.dataset.nav) {
+    document.getElementById(`${event.target.dataset.nav}`);
+    setTimeout(() => {
+      location.hash = `${event.target.dataset.nav}`;
+    }, 200);
+  }
+});
+//end
+//start creat section
+for (let i = 1; i < 5; i++) createSection();
+createNav();
+document.getElementById("btn").addEventListener("click", () => {
+  createSection();
+  createNav();
+});
